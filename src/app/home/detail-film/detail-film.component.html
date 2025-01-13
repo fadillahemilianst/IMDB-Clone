@@ -1,0 +1,38 @@
+<div *ngIf="filmDetail" class="max-w-5xl mx-auto p-6">
+  <div class="flex space-x-6">
+    <img
+      [src]="filmDetail.Poster"
+      alt="{{ filmDetail.Title }}"
+      class="w-1/3 rounded-lg shadow-lg"
+    />
+    <div class="flex-1">
+      <h1 class="text-3xl font-bold">{{ filmDetail.Title }}</h1>
+      <p class="text-yellow-500 text-lg my-2">{{ filmDetail.Genre }}</p>
+      <p class="text-gray-700">{{ filmDetail.Plot }}</p>
+
+      <div class="mt-4">
+        <p>
+          <strong>Writers:</strong> {{ filmDetail.Writer }}
+        </p>
+        <p>
+          <strong>Stars:</strong> {{ filmDetail.Actors }}
+        </p>
+      </div>
+
+      <div class="mt-4 flex space-x-6">
+        <div>
+          <strong>IMDb Rating:</strong>
+          <p class="text-yellow-500 text-xl">{{ filmDetail.imdbRating }}</p>
+        </div>
+        <div>
+          <strong>Popularity:</strong>
+          <p class="text-gray-700">{{ filmDetail.imdbVotes }} votes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!filmDetail" class="text-center py-10">
+  <p>Loading...</p>
+</div>
