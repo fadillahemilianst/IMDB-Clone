@@ -1,0 +1,23 @@
+<div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-4">Your Favorite Films</h1>
+    <div *ngIf="dataFavorite; else noFavorites">
+      <div *ngFor="let film of dataFavorite" class="border border-gray-200 p-4 rounded mb-4 flex">
+        <img [src]="film.Poster" alt="{{ film.Title }}" class="w-20 h-28 mr-4 rounded shadow-lg" />
+        <div>
+          <h2 class="text-xl font-semibold">{{ film.Title }}</h2>
+          <p class="text-gray-600">{{ film.Year }}</p>
+          <p class="text-yellow-500">{{ film.Genre }}</p>
+          <button
+  (click)="removeFavorite(film.imdbID)" 
+  class="text-red-500 hover:text-red-700 mt-2"
+>
+  Remove from Favorites
+</button>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #noFavorites>
+      <p class="text-center text-gray-500">No favorite films found.</p>
+    </ng-template>
+  </div>

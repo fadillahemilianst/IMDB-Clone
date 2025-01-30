@@ -38,3 +38,11 @@ export type IMDBRatingType = {
     Website: string;
     Response: string;
   };
+
+  export type IMDBFilmFavoriteType= {
+    Title: string;
+    Year: string;
+    Poster: string;
+    Type: string;
+    imdbID: string
+  }

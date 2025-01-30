@@ -40,6 +40,10 @@ export class AppComponent {
 
   }
 
+  favoritePage(){
+    
+  }
+
   deleteFilter() {
     this.searchName.reset();
   }

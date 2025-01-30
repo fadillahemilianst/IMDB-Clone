@@ -24,9 +24,13 @@ export class HomeIndexComponent {
         } else {
           this.params['query'] = 'marvel'
         }
-        this.filmService.getAllFilm(this.params).subscribe((res) => {
-          if(res) this.filmCollections = res.result ?? []
-        })
+        this.filmService.getAllFilm(this.params).subscribe(
+          (res) => {
+            console.log('Film Collections:', res.result); // Debug response
+            this.filmCollections = res.result ?? [];
+          },
+          (err) => console.error('Error fetching films:', err) // Debug error
+        );
       })
     }
 }

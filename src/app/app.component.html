@@ -7,7 +7,8 @@
     </div>
     <div class="flex items-center space-x-10">
       <ul class="flex space-x-4">
-        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/" class=" hover:text-yellow-400">Home</a></li>
+        <li><a [routerLink]="'/favorite'" class=" hover:text-yellow-400" (click)="favoritePage()">Favorite</a></li>
       </ul>
 
       <div class="relative w-full max-w-sm">
